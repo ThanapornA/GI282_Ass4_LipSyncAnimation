@@ -383,10 +383,10 @@ MonoBehaviour:
   npc: {fileID: 1220117566}
   npcText: {fileID: 390086488}
   audioSource: {fileID: 1220117569}
-  helloClip: {fileID: 0}
-  goodClip: {fileID: 0}
-  nameClip: {fileID: 0}
-  unknownClip: {fileID: 0}
+  helloClip: {fileID: 8300000, guid: 3387b61efeac228419bf69bc500a2263, type: 3}
+  goodClip: {fileID: 8300000, guid: 0ad9c395bd872af41a4b2691291de456, type: 3}
+  nameClip: {fileID: 8300000, guid: f1fa9e7d574180047a5ae56d575fadc6, type: 3}
+  unknownClip: {fileID: 8300000, guid: ead8127d0f5dc7a458fb2aa1e8f81473, type: 3}
 --- !u!4 &774505657
 Transform:
   m_ObjectHideFlags: 0
@@ -824,6 +824,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!137 &972613826 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3291068957358341088, guid: 962af1e161b24de4aa3bb3bf77231645, type: 3}
+  m_PrefabInstance: {fileID: 1017640132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1017640132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -890,6 +895,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7723718987852896140, guid: 962af1e161b24de4aa3bb3bf77231645, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1220117570}
+    - targetCorrespondingSourceObject: {fileID: 7723718987852896140, guid: 962af1e161b24de4aa3bb3bf77231645, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1220117573}
   m_SourcePrefab: {fileID: 100100000, guid: 962af1e161b24de4aa3bb3bf77231645, type: 3}
 --- !u!1 &1163717682
 GameObject:
@@ -1191,13 +1199,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateMethod: 0
-  skinnedMeshRenderer: {fileID: 0}
-  blendShapes: []
+  skinnedMeshRenderer: {fileID: 972613826}
+  blendShapes:
+  - phoneme: A
+    index: 10
+    maxWeight: 1
+  - phoneme: E
+    index: 11
+    maxWeight: 1
+  - phoneme: I
+    index: 12
+    maxWeight: 1
+  - phoneme: O
+    index: 13
+    maxWeight: 1
+  - phoneme: U
+    index: 14
+    maxWeight: 1
+  - phoneme: N
+    index: -1
+    maxWeight: 1
+  - phoneme: '-'
+    index: -1
+    maxWeight: 1
   maxBlendShapeValue: 100
   minVolume: -2.5
   maxVolume: -1.5
   smoothness: 0.05
   usePhonemeBlend: 0
+--- !u!114 &1220117573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220117566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87560e04aa74c7a41acb9c87051c3b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: d0622910165464ec98bf667e4f571218, type: 2}
+  onLipSyncUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1220117570}
+        m_TargetAssemblyTypeName: uLipSync.uLipSyncBlendShape, uLipSync.Runtime
+        m_MethodName: OnLipSyncUpdate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  outputSoundGain: 1
+  audioSourceProxy: {fileID: 0}
 --- !u!1 &1573124819
 GameObject:
   m_ObjectHideFlags: 0
